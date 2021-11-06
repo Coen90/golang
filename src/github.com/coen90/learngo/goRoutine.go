@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func goRoutine() {
 	go sexyCount("nico")
 	go sexyCount("flynn")
 	time.Sleep(time.Second * 5)
