@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-var errRequestFailed = errors.New("Request Failed")
+var errorRequestFailed = errors.New("Request Failed")
 
 func urlchecker() {
 	var results = map[string]string{}
@@ -24,7 +24,7 @@ func urlchecker() {
 	}
 	for _, url := range urls {
 		result := "OK"
-		err := hitURL(url)
+		err := hittURL(url)
 		if err != nil {
 			result = "FAIL"
 		}
@@ -35,12 +35,12 @@ func urlchecker() {
 	}
 }
 
-func hitURL(url string) error {
+func hittURL(url string) error {
 	fmt.Println("Checking:", url)
 	resp, err := http.Get(url)
 	if err != nil || resp.StatusCode >= 400 {
 		fmt.Println(err, resp.StatusCode)
-		return errRequestFailed
+		return errorRequestFailed
 	}
 	return nil
 }
