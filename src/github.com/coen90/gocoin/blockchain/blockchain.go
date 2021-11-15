@@ -68,3 +68,6 @@ func(b *blockchain) GetBlock(height int) (*Block, error) {
 	}
 	return b.blocks[height-1], nil
 }
+
+// 온라인 인터뷰 내일 (16일) 15시30분 직무관련
+// 
